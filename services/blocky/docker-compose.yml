@@ -25,5 +25,5 @@ services:
       - ./logs.csv:/logs.csv
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 3001:4000
+      - 4000:3001
       - 54:53/udp
