@@ -8,11 +8,11 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./logs.csv:/logs.csv
+      - ./logs/:/logs/
     environment:
       - BLOCKY_API_URL=http://192.168.8.73:3001
       - QUERY_LOG_TYPE=csv
-      - QUERY_LOG_TARGET=/logs.csv
+      - QUERY_LOG_TARGET=/logs/
       - INSTANCE_NAME=blocky-raspi5
 
   blocky:
@@ -22,7 +22,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./config.yml:/app/config.yml
-      - ./logs.csv:/logs.csv
+      - ./logs/:/logs/
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 3001:3001
