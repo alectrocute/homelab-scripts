@@ -26,4 +26,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 3001:3001
-      - 54:53/udp
+      - 53:53/udp
