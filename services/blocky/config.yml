@@ -27,7 +27,7 @@ prometheus:
 
 queryLog:
   type: csv
-  target: /logs.csv
+  target: /logs/
 
 bootstrapDns:
   - tcp+udp:1.1.1.1
