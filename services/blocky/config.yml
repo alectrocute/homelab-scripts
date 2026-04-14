@@ -37,4 +37,4 @@ bootstrapDns:
       - 185.95.218.42
 
 port: 0.0.0.0:54
-httpPort: 3001
+httpPort: 0.0.0.0:3001
