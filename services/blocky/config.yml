@@ -1,0 +1,40 @@
+upstream:
+  default:
+    - 1.1.1.1
+upstreamTimeout: 2s
+
+blocking:
+  blackLists:
+    ads:
+      - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      - http://sysctl.org/cameleon/hosts
+      - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+      - https://someonewhocares.org/hosts/hosts
+      - https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt
+      - https://raw.githubusercontent.com/blocklistproject/Lists/master/ads.txt
+  whiteLists:
+     ads:
+      - /allowlist.txt
+  refreshPeriod: 1h
+  downloadTimeout: 4m
+  downloadAttempts: 5
+  downloadCooldown: 10s
+
+prometheus:
+  enable: true
+  path: /metrics
+
+queryLog:
+  type: csv
+  target: /logs.csv
+
+bootstrapDns:
+  - tcp+udp:1.1.1.1
+  - https://1.1.1.1/dns-query
+  - upstream: https://dns.digitale-gesellschaft.ch/dns-query
+    ips:
+      - 185.95.218.42
+
+port: 0.0.0.0:54
+httpPort: 3001
